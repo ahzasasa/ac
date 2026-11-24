@@ -1,0 +1,839 @@
+:root {
+    --navy-dark: #0F2342;
+    --navy-main: #183661;
+    --sky-blue: #6899D0;
+    --sky-light: #B9D2EE;
+    --gold-bright: #F5AF3D;
+    --gold-amber: #E58C24;
+    --cream-bg: #FBF9F4;
+    --cream-shade: #EFE9DB;
+    --pixel-black: #0B1120;
+    --white: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--navy-dark);
+    background-image: 
+        linear-gradient(45deg, #132B4F 25%, transparent 25%), 
+        linear-gradient(-45deg, #132B4F 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #132B4F 75%), 
+        linear-gradient(-45deg, transparent 75%, #132B4F 75%);
+    background-size: 32px 32px;
+    background-position: 0 0, 0 16px, 16px -16px, -16px 0;
+    color: var(--pixel-black);
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    line-height: 1.4;
+    padding: 20px 12px;
+}
+
+h1, h2, h3, h4, .hud-brand, .pixel-btn, .node-badge, .quest-id {
+    font-family: 'Press Start 2P', monospace;
+    line-height: 1.35;
+}
+
+.crt-overlay {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.12) 50%);
+    background-size: 100% 4px;
+    z-index: 999;
+}
+
+.game-wrapper {
+    max-width: 1060px;
+    margin: 0 auto;
+    background-color: var(--cream-bg);
+    border: 4px solid var(--pixel-black);
+    box-shadow: 0 0 0 4px var(--gold-bright), 12px 12px 0px rgba(0, 0, 0, 0.6);
+}
+
+.pixel-box {
+    border: 4px solid var(--pixel-black);
+    box-shadow: 6px 6px 0px var(--pixel-black);
+    background-color: var(--cream-bg);
+}
+
+.pixel-box-inner {
+    border: 4px solid var(--pixel-black);
+    box-shadow: 4px 4px 0px var(--pixel-black);
+    background-color: var(--white);
+}
+
+.pixel-btn {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 12px 16px;
+    border: 4px solid var(--pixel-black);
+    box-shadow: inset -3px -3px 0px rgba(0,0,0,0.25), 4px 4px 0px var(--pixel-black);
+    color: var(--pixel-black);
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.pixel-btn:hover {
+    filter: brightness(1.06);
+    transform: translate(-1px, -1px);
+}
+
+.pixel-btn:active {
+    transform: translate(3px, 3px);
+    box-shadow: none;
+}
+
+.btn-gold { background-color: var(--gold-bright); }
+.btn-cream { background-color: var(--cream-bg); }
+.btn-sky { background-color: var(--sky-light); }
+.btn-xs { font-size: 0.62rem; padding: 8px 10px; }
+.btn-full { width: 100%; text-align: center; margin-top: 10px; }
+
+.hud-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--navy-main);
+    color: var(--white);
+    padding: 12px 20px;
+    border-bottom: 4px solid var(--pixel-black);
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hud-brand {
+    font-size: 0.85rem;
+    color: var(--gold-bright);
+}
+
+.blink-star {
+    animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    to { visibility: hidden; }
+}
+
+.hud-nav {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.hud-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.65rem;
+}
+
+.hud-nav a:hover {
+    color: var(--gold-bright);
+}
+
+.hero-stage {
+    background: linear-gradient(180deg, var(--navy-main) 0%, var(--sky-blue) 68%, var(--gold-bright) 100%);
+    padding: 36px 28px;
+    border-bottom: 4px solid var(--pixel-black);
+    position: relative;
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+.character-card {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--cream-bg);
+}
+
+.card-top-bar {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.58rem;
+    border-bottom: 3px solid var(--pixel-black);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.hp-badge {
+    color: #15803D;
+}
+
+.sprite-arena {
+    background: linear-gradient(180deg, #B9D2EE 0%, #FDE68A 100%);
+    border: 3px solid var(--pixel-black);
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 14px;
+}
+
+.pixel-emblem {
+    width: 128px;
+    height: 128px;
+    animation: floatSprite 2.2s ease-in-out infinite;
+}
+
+@keyframes floatSprite {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+.sprite-shadow {
+    width: 80px;
+    height: 10px;
+    background-color: rgba(24, 54, 97, 0.35);
+    margin-top: 6px;
+}
+
+.stat-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.56rem;
+}
+
+.bar-track {
+    width: 130px;
+    height: 12px;
+    border: 2px solid var(--pixel-black);
+    background-color: var(--cream-shade);
+}
+
+.bar-fill {
+    height: 100%;
+}
+
+.bar-fill.gold { background-color: var(--gold-bright); }
+.bar-fill.sky { background-color: var(--sky-blue); }
+
+.hero-dialogue {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quest-tag {
+    display: inline-block;
+    background-color: var(--navy-main);
+    color: var(--gold-bright);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.62rem;
+    padding: 6px 10px;
+    margin-bottom: 14px;
+    align-self: flex-start;
+}
+
+.pixel-title {
+    font-size: 2.1rem;
+    color: var(--navy-main);
+    text-shadow: 3px 3px 0px var(--gold-bright);
+    margin-bottom: 10px;
+}
+
+.pixel-subtitle {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.72rem;
+    color: var(--gold-amber);
+    margin-bottom: 16px;
+}
+
+.rpg-textbox {
+    background-color: var(--navy-dark);
+    color: var(--white);
+    border: 4px solid var(--pixel-black);
+    padding: 16px 20px;
+    font-size: 1.35rem;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.dialogue-cursor {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    color: var(--gold-bright);
+    font-size: 0.9rem;
+    animation: blink 0.8s steps(2, start) infinite;
+}
+
+.hero-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.game-section {
+    padding: 32px 28px;
+    border-bottom: 4px solid var(--pixel-black);
+}
+
+.section-banner {
+    background-color: var(--navy-main);
+    color: var(--white);
+    border: 4px solid var(--pixel-black);
+    padding: 14px 18px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.section-banner h2 {
+    font-size: 0.92rem;
+    color: var(--gold-bright);
+}
+
+.section-banner span {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
+    color: var(--sky-light);
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.skill-slot {
+    background-color: var(--white);
+    border: 4px solid var(--pixel-black);
+    box-shadow: 4px 4px 0px var(--pixel-black);
+    padding: 16px 10px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.skill-slot:hover,
+.skill-slot.active {
+    background-color: var(--gold-bright);
+    transform: translate(-2px, -2px);
+}
+
+.pixel-icon {
+    font-size: 1.8rem;
+}
+
+.skill-name {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.65rem;
+    color: var(--navy-main);
+}
+
+.skill-lvl {
+    background-color: var(--navy-main);
+    color: var(--gold-bright);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.55rem;
+    padding: 3px 6px;
+}
+
+.inspector-panel {
+    padding: 20px;
+    background-color: var(--sky-light);
+    margin-bottom: 26px;
+}
+
+.inspector-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.badge-gold {
+    background-color: var(--gold-bright);
+    border: 2px solid var(--pixel-black);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.58rem;
+    padding: 4px 8px;
+}
+
+.inspector-header h3 {
+    font-size: 0.85rem;
+    color: var(--navy-main);
+}
+
+.inspector-panel p {
+    font-size: 1.3rem;
+}
+
+.buff-header h3 {
+    font-size: 0.82rem;
+    color: var(--navy-main);
+    margin-bottom: 14px;
+}
+
+.buff-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.buff-card {
+    background-color: var(--white);
+    border: 3px solid var(--pixel-black);
+    padding: 14px;
+}
+
+.buff-tag {
+    display: inline-block;
+    background-color: var(--navy-main);
+    color: var(--white);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.55rem;
+    padding: 3px 6px;
+    margin-bottom: 8px;
+}
+
+.buff-card h4 {
+    font-size: 0.68rem;
+    color: var(--navy-main);
+    margin-bottom: 8px;
+}
+
+.buff-card p {
+    font-size: 1.15rem;
+    line-height: 1.3;
+}
+
+.visi-banner {
+    padding: 20px;
+    background-color: var(--cream-shade);
+    margin-bottom: 24px;
+}
+
+.badge-navy {
+    display: inline-block;
+    background-color: var(--navy-main);
+    color: var(--gold-bright);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.62rem;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.visi-banner p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--navy-main);
+}
+
+.quest-split {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 22px;
+}
+
+.misi-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.quest-item {
+    padding: 16px;
+}
+
+.quest-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.quest-id {
+    font-size: 0.62rem;
+    color: var(--gold-amber);
+}
+
+.quest-status {
+    background-color: var(--gold-bright);
+    border: 2px solid var(--pixel-black);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.55rem;
+    padding: 2px 6px;
+}
+
+.quest-item h4 {
+    font-size: 0.75rem;
+    color: var(--navy-main);
+    margin-bottom: 6px;
+}
+
+.quest-item p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.program-console {
+    padding: 18px;
+    background-color: var(--gold-bright);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.console-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.68rem;
+    margin-bottom: 12px;
+}
+
+.console-screen {
+    background-color: var(--navy-dark);
+    color: var(--white);
+    border: 4px solid var(--pixel-black);
+    padding: 18px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.prog-tier {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.56rem;
+    color: var(--sky-light);
+    margin-bottom: 10px;
+}
+
+.console-screen h3 {
+    font-size: 0.85rem;
+    color: var(--gold-bright);
+    margin-bottom: 10px;
+}
+
+.console-screen p {
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+}
+
+.prog-rewards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.prog-rewards span {
+    background-color: var(--navy-main);
+    border: 2px solid var(--sky-blue);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.52rem;
+    padding: 4px 6px;
+    color: var(--gold-bright);
+}
+
+
+.node-badge {
+    display: inline-block;
+    background-color: var(--sky-blue);
+    color: var(--white);
+    font-size: 0.58rem;
+    padding: 4px 8px;
+    border: 2px solid var(--pixel-black);
+    margin-bottom: 10px;
+}
+
+.tavern-section {
+    padding: 32px 28px;
+    background-color: var(--navy-main);
+    color: var(--white);
+    border-bottom: 4px solid var(--pixel-black);
+}
+
+.tavern-box {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    border: 4px solid var(--gold-bright);
+    padding: 22px;
+    background-color: var(--navy-dark);
+}
+
+.npc-avatar {
+    width: 72px;
+    height: 72px;
+    background-color: var(--gold-bright);
+    color: var(--navy-main);
+    border: 4px solid var(--pixel-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.tavern-content h2 {
+    font-size: 0.9rem;
+    color: var(--gold-bright);
+    margin-bottom: 8px;
+}
+
+.tavern-content p {
+    font-size: 1.3rem;
+    margin-bottom: 14px;
+}
+
+.game-footer {
+    background-color: var(--pixel-black);
+    color: var(--gold-bright);
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.modal-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(11, 17, 32, 0.85);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.modal-backdrop.active {
+    display: flex;
+}
+
+.modal-window {
+    max-width: 620px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    background-color: var(--cream-bg);
+}
+
+.modal-titlebar {
+    background-color: var(--navy-main);
+    color: var(--gold-bright);
+    padding: 12px 16px;
+    border-bottom: 4px solid var(--pixel-black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.72rem;
+}
+
+.modal-content {
+    padding: 20px;
+    font-size: 1.3rem;
+}
+
+.modal-content p {
+    margin-bottom: 12px;
+}
+
+.retro-input, .retro-textarea {
+    width: 100%;
+    border: 3px solid var(--pixel-black);
+    padding: 10px;
+    font-family: 'VT323', monospace;
+    font-size: 1.25rem;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    background-color: var(--white);
+}
+
+@media (max-width: 860px) {
+    .hero-layout,
+    .quest-split {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-grid,
+    .buff-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .map-nodes {
+        flex-direction: column;
+    }
+
+    .map-arrow {
+        transform: rotate(90deg);
+        justify-content: center;
+    }
+
+    .pixel-title {
+        font-size: 1.55rem;
+    }
+}
+
+/* alur berpikir */
+.flowchart-wrapper {
+    background-color: var(--cream-shade);
+    border: 4px solid var(--pixel-black);
+    box-shadow: inset 4px 4px 0px rgba(0, 0, 0, 0.08);
+    padding: 28px 20px;
+}
+
+.flow-row-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.flow-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flow-node {
+    border: 4px solid var(--pixel-black);
+    box-shadow: 4px 4px 0px var(--pixel-black);
+    padding: 14px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    background-color: var(--cream-bg);
+    transition: transform 0.12s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.flow-node:hover {
+    transform: translate(-2px, -2px);
+}
+
+.flow-node h4 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
+    line-height: 1.45;
+}
+
+.node-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.node-wide {
+    width: 100%;
+    max-width: 480px;
+}
+
+/* Variasi Warna Node Sesuai Dokumen GDO */
+.node-cream {
+    background-color: var(--cream-bg);
+    color: var(--navy-main);
+}
+
+.node-navy {
+    background-color: var(--sky-blue);
+    color: var(--pixel-black);
+}
+
+.node-gold {
+    background-color: var(--gold-bright);
+    color: var(--pixel-black);
+}
+
+/* SVG Connector Presisi */
+.svg-connector-box {
+    width: 100%;
+    height: 42px;
+    display: block;
+    line-height: 0;
+}
+
+.svg-connector-box svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.stem-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.stem-line {
+    width: 4px;
+    height: 14px;
+    background-color: var(--pixel-black);
+}
+
+.stem-head {
+    font-size: 0.85rem;
+    line-height: 0.8;
+    color: var(--pixel-black);
+    margin-top: -2px;
+    margin-bottom: 2px;
+}
+
+.mobile-arrow {
+    display: none;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--pixel-black);
+    padding: 4px 0;
+}
+
+/* mobile layout */
+@media (max-width: 760px) {
+    .flow-row-3 {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-arrow {
+        display: block;
+    }
+
+    .flow-node h4 {
+        font-size: 0.56rem;
+    }
+}

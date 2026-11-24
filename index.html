@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARUNIKA CAKRAWALA | HIMASTA 2027</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+
+    <div class="game-wrapper">
+        <!-- top hud bar -->
+        <header class="hud-bar">
+            <div class="hud-brand">
+                <span class="blink-star">★</span>KABINET ARUNIKA CAKRAWALA
+            </div>
+            <nav class="hud-nav">
+                <a href="index.html" class="sfx-btn">BERANDA</a>
+                <a href="about.html" class="sfx-btn">ABOUT</a>
+                <a href="timses.html" class="sfx-btn">TIMSES</a>
+                <a href="#" class="sfx-btn">KATA</a>
+            </nav>
+            <button id="soundToggle" class="pixel-btn btn-gold btn-xs sfx-btn">SFX: ON</button>
+        </header>
+
+        <!-- hero stage -->
+        <section class="hero-stage">
+            <div class="sky-stars"></div>
+            
+            <div class="hero-layout">
+                <!-- left -->
+                <div class="character-card pixel-box">
+                    <div class="card-top-bar">
+                        <span>M. RISKI FARIS</span>
+                        <span class="hp-badge">KANDIDAT 00</span>
+                    </div>
+                    
+                    <div class="sprite-arena">
+                        <svg class="pixel-emblem" viewBox="0 0 32 32" shape-rendering="crispEdges" aria-label="Pixel Emblem Arunika Cakrawala">
+                            <rect x="15" y="2" width="2" height="4" fill="#F5AF3D"/>
+                            <rect x="9" y="5" width="2" height="3" fill="#F5AF3D"/>
+                            <rect x="21" y="5" width="2" height="3" fill="#F5AF3D"/>
+                            <rect x="5" y="10" width="3" height="2" fill="#F5AF3D"/>
+                            <rect x="24" y="10" width="3" height="2" fill="#F5AF3D"/>
+                            <rect x="11" y="9" width="10" height="7" fill="#F5AF3D"/>
+                            <rect x="13" y="8" width="6" height="9" fill="#FDE047"/>
+                            <rect x="6" y="14" width="20" height="2" fill="#6899D0"/>
+                            <rect x="4" y="16" width="24" height="2" fill="#6899D0"/>
+                            <rect x="15" y="13" width="2" height="2" fill="#183661"/>
+                            <rect x="14" y="16" width="4" height="5" fill="#183661"/>
+                            <rect x="10" y="15" width="2" height="2" fill="#183661"/>
+                            <rect x="9" y="18" width="3" height="4" fill="#183661"/>
+                            <rect x="20" y="15" width="2" height="2" fill="#183661"/>
+                            <rect x="20" y="18" width="3" height="4" fill="#183661"/>
+                            <rect x="5" y="22" width="22" height="2" fill="#183661"/>
+                            <rect x="8" y="25" width="16" height="2" fill="#E58C24"/>
+                            <rect x="12" y="28" width="8" height="2" fill="#183661"/>
+                        </svg>
+                        <div class="sprite-shadow"></div>
+                    </div>
+
+                    <div class="stat-bars">
+                        <div class="stat-row">
+                            <span>INKLUSIF</span>
+                            <div class="bar-track"><div class="bar-fill gold" style="width: 100%"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span>SINERGI</span>
+                            <div class="bar-track"><div class="bar-fill sky" style="width: 100%"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span>PROGRESIF</span>
+                            <div class="bar-track"><div class="bar-fill gold" style="width: 100%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- right -->
+                <div class="hero-dialogue pixel-box">
+                    <div class="quest-tag">HIMPUNAN MAHASISWA STATISTIKA 2027</div>
+                    <h1 class="pixel-title">ARUNIKA<br>CAKRAWALA</h1>
+                    <p class="pixel-subtitle">“Bertumbuh Bersama, Menyinari Sesama”</p>
+                    
+                    <div class="rpg-textbox">
+                        <p id="typewriterText">
+                            Cahaya fajar pembawa harapan baru untuk Himasta. Mewujudkan organisasi yang inklusif, kolaboratif, dan progresif dalam mengembangkan potensi mahasiswa Statistika.
+                        </p>
+                        <span class="dialogue-cursor">▼</span>
+                    </div>
+
+                    <div class="hero-cta-group">
+                        <a href="#" class="pixel-btn btn-gold sfx-btn">BACA GDO</a>
+                        <button id="openCitaBtn" class="pixel-btn btn-cream sfx-btn">BACA CITA &amp; ASA</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 1: nilai organisais -->
+        <section id="stats" class="game-section">
+            <div class="section-banner">
+                <h2>NILAI ORGANISASI</h2>
+            </div>
+
+            <div class="skill-grid">
+                <button class="skill-slot active sfx-btn" data-skill="inklusif">
+                    <span class="skill-lvl">01</span>
+                    <span class="skill-name">INKLUSIF</span>
+                </button>
+                <button class="skill-slot sfx-btn" data-skill="kolaboratif">
+                    <span class="skill-lvl">02</span>
+                    <span class="skill-name">KOLABORATIF</span>
+                </button>
+                <button class="skill-slot sfx-btn" data-skill="progresif">
+                    <span class="skill-lvl">03</span>
+                    <span class="skill-name">PROGRESIF</span>
+                </button>
+                <button class="skill-slot sfx-btn" data-skill="keberlanjutan">
+                    <span class="skill-lvl">04</span>
+                    <span class="skill-name">BERKELANJUTAN</span>
+                </button>
+            </div>
+
+            <div class="inspector-panel pixel-box-inner">
+                <div class="inspector-header">
+                    <span class="badge-gold">NILAI ORGANISASI</span>
+                    <h3 id="skillTitle">INKLUSIF</h3>
+                </div>
+                <p id="skillDesc">
+                    Menekankan pentingnya keterbukaan dan kesetaraan dalam memberikan ruang bagi seluruh elemen Himasta untuk berpartisipasi, berkontribusi, serta mengembangkan potensinya tanpa membatasi kesempatan terlibat dalam organisasi.
+                </p>
+            </div>
+
+            <!-- budaya organisasi -->
+            <div class="section-banner" style="margin-top: 28px;">
+                <h2>BUDAYA ORGANISASI</h2>
+                <span>PILIH ICON UNTUK INSPEKSI</span>
+            </div>
+            
+            <div class="skill-grid" id="budayaGrid">
+                <button class="skill-slot active sfx-btn" data-budaya="keterbukaan">
+                    <span class="skill-lvl">01</span>
+                    <span class="skill-name">KETERBUKAAN &amp; KOMUNIKASI</span>
+                </button>
+                <button class="skill-slot sfx-btn" data-budaya="kekeluargaan">
+                    <span class="skill-lvl">02</span>
+                    <span class="skill-name">KEKELUARGAAN &amp; MERANGKUL</span>
+                </button>
+                <button class="skill-slot sfx-btn" data-budaya="profesionalitas">
+                    <span class="skill-lvl">03</span>
+                    <span class="skill-name">PROFESIONALITAS &amp; TANGGUNG JAWAB</span>
+                </button>
+                <button class="skill-slot sfx-btn" data-budaya="evaluatif">
+                    <span class="skill-lvl">04</span>
+                    <span class="skill-name">EVALUATIF &amp; ADAPTIF</span>
+                </button>
+            </div>
+            
+            <!-- lihat budaya -->
+            <div class="inspector-panel pixel-box-inner" style="margin-bottom: 0;">
+                <div class="inspector-header">
+                    <span class="badge-gold">BUDAYA ORGANISASI</span>
+                    <h3 id="budayaTitle">KETERBUKAAN DAN KOMUNIKASI</h3>
+                </div>
+                <p id="budayaDesc">
+                    Budaya keterbukaan dan komunikasi menekankan pentingnya membangun hubungan organisasi yang dilandasi oleh kejujuran, kepercayaan, dan komunikasi dua arah. Budaya ini diwujudkan melalui keterbukaan dalam menyampaikan informasi, memberikan pendapat, menyampaikan kendala, serta menerima kritik dan saran dari seluruh elemen organisasi tanpa rasa takut dihakimi.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- section 2: visi dan misi -->
+        <section id="quests" class="game-section">
+            <div class="section-banner">
+                <h2>VISI &amp; MISI</h2>
+            </div>
+
+            <div class="visi-banner pixel-box-inner">
+                <span class="badge-navy">VISI</span>
+                <p>
+                    “Mewujudkan Himasta sebagai organisasi yang inklusif, kolaboratif, dan progresif dalam mengembangkan potensi mahasiswa Statistika serta menciptakan kebermanfaatan yang berkelanjutan”
+                </p>
+            </div>
+
+            <div class="quest-split">
+                <div class="misi-list">
+                    <div class="quest-item pixel-box-inner">
+                        <div class="quest-top">
+                            <h4>MISI 01</h4>
+                        </div>
+                        <p>Membangun internal organisasi yang solid, harmonis, dan berintegritas melalui penguatan komunikasi, koordinasi, serta rasa kekeluargaan antaranggota.</p>
+                        <button class="pixel-btn btn-sky btn-xs sfx-btn btn-misi-detail" data-misi="0">PENJABARAN</button>
+                    </div>
+
+                    <div class="quest-item pixel-box-inner">
+                        <div class="quest-top">
+                            <h4>MISI 02</h4>
+                        </div>
+                        <p>Mewujudkan Himasta yang inklusif dan aspiratif dengan membuka ruang partisipasi serta menampung dan menindaklanjuti aspirasi seluruh mahasiswa Statistika.</p>
+                        <button class="pixel-btn btn-sky btn-xs sfx-btn btn-misi-detail" data-misi="1">PENJABARAN</button>
+                    </div>
+
+                    <div class="quest-item pixel-box-inner">
+                        <div class="quest-top">
+                            <div class="quest-top">
+                                <h4>MISI 03</h4>
+                            </div>
+                        </div>
+                        <p>Mengembangkan program kerja yang inovatif, adaptif, dan berkelanjutan berdasarkan kebutuhan mahasiswa serta evaluasi organisasi demi kebermanfaatan nyata.</p>
+                        <button class="pixel-btn btn-sky btn-xs sfx-btn btn-misi-detail" data-misi="2">PENJABARAN</button>
+                    </div>
+                </div>
+
+                <div class="program-console pixel-box-inner">
+                    <div class="console-header">
+                        <span>OUTPUT PROGRAM</span>
+                        <div class="console-arrows">
+                            <button id="prevProg" class="pixel-btn btn-xs sfx-btn">◀</button>
+                            <button id="nextProg" class="pixel-btn btn-xs sfx-btn">▶</button>
+                        </div>
+                    </div>
+
+                    <div class="console-screen">
+                        <h3 id="progName">PROGRAM 100 HARI KERJA</h3>
+                        <p id="progSummary">
+                            ... summary ...
+                        </p>
+                        <div class="prog-rewards" id="progRewards">
+                            <span>...</span>
+                            <span>...</span>
+                        </div>
+                    </div>
+
+                    <div class="console-actions">
+                        <button id="openProgDetail" class="pixel-btn btn-gold btn-full sfx-btn">DETAIL OUTPUT</button>
+                        <button id="openSwotModal" class="pixel-btn btn-cream btn-full sfx-btn">ANALISIS SWOT (IFAS/EFAS)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 3: alur berpikir -->
+        <section id="lore" class="game-section">
+            <div class="section-banner">
+                <h2>ALUR BERPIKIR</h2>
+            </div>
+        
+            <div class="flowchart-wrapper">
+                <!-- level 1: sumber input -->
+                <div class="flow-row-3">
+                    <div class="flow-node node-cream">
+                        <h4>RISET</h4>
+                    </div>
+                    <div class="flow-node node-cream">
+                        <h4>JEJAK PENDAPAT</h4>
+                    </div>
+                    <div class="flow-node node-cream">
+                        <h4>TINJAUAN YURIDIS &amp; FILOSOFIS</h4>
+                    </div>
+                </div>
+        
+                <!-- connector 1: garis bercabang -->
+                <div class="svg-connector-box desktop-only">
+                    <svg viewBox="0 0 900 44" preserveAspectRatio="none" shape-rendering="crispEdges">
+                        <path d="M150 0 V36" stroke="#0B1120" stroke-width="4" fill="none"/>
+                        <path d="M150 18 H442 V36" stroke="#0B1120" stroke-width="4" fill="none"/>
+                        <path d="M450 0 V36" stroke="#0B1120" stroke-width="4" fill="none"/>
+                        <path d="M450 10 H158 V36" stroke="#0B1120" stroke-width="4" fill="none"/>
+                        <path d="M450 10 H742 V36" stroke="#0B1120" stroke-width="4" fill="none"/>
+                        <path d="M750 0 V36" stroke="#0B1120" stroke-width="4" fill="none"/>
+                        <path d="M750 18 H458 V36" stroke="#0B1120" stroke-width="4" fill="none"/>
+        
+                        <polygon points="146,34 162,34 154,44" fill="#0B1120"/>
+                        <polygon points="442,34 458,34 450,44" fill="#0B1120"/>
+                        <polygon points="738,34 754,34 746,44" fill="#0B1120"/>
+                    </svg>
+                </div>
+                <div class="mobile-arrow">▼</div>
+        
+                <!-- level 2: analisis kondisi -->
+                <div class="flow-row-3">
+                    <div class="flow-node node-navy">
+                        <h4>ANALISIS KONDISI FAKTUAL INTERNAL</h4>
+                    </div>
+                    <div class="flow-node node-navy">
+                        <h4>ANALISIS KONDISI FAKTUAL EKSTERNAL</h4>
+                    </div>
+                    <div class="flow-node node-navy">
+                        <h4>ANALISIS KONDISI IDEAL</h4>
+                    </div>
+                </div>
+        
+                <!-- connector 2 -->
+                <div class="svg-connector-box desktop-only">
+                    <svg viewBox="0 0 900 40" preserveAspectRatio="none" shape-rendering="crispEdges">
+                        <path d="M150 0 V18 H750 V0" stroke="#0B1120" stroke-width="4" fill="none"/>
+                        <path d="M450 0 V32" stroke="#0B1120" stroke-width="4" fill="none"/>
+                        <polygon points="442,30 458,30 450,40" fill="#0B1120"/>
+                    </svg>
+                </div>
+                <div class="mobile-arrow">▼</div>
+        
+                <!-- level 3 - 8: alur vertikal -->
+                <div class="flow-column-center">
+                    <div class="flow-node node-cream node-wide">
+                        <h4>RUMUSAN MASALAH &amp; KEBUTUHAN ORGANISASI</h4>
+                    </div>
+                    <div class="stem-arrow">
+                        <div class="stem-line"></div>
+                        <div class="stem-head">▼</div>
+                    </div>
+        
+                    <div class="flow-node node-navy node-wide">
+                        <h4>NILAI &amp; BUDAYA ORGANISASI</h4>
+                    </div>
+                    <div class="stem-arrow">
+                        <div class="stem-line"></div>
+                        <div class="stem-head">▼</div>
+                    </div>
+        
+                    <div class="flow-node node-cream node-wide">
+                        <h4>VISI &amp; MISI KABINET</h4>
+                    </div>
+                    <div class="stem-arrow">
+                        <div class="stem-line"></div>
+                        <div class="stem-head">▼</div>
+                    </div>
+        
+                    <div class="flow-node node-navy node-wide">
+                        <h4>STRUKTUR ORGANISASI / ORGANOGRAM</h4>
+                    </div>
+                    <div class="stem-arrow">
+                        <div class="stem-line"></div>
+                        <div class="stem-head">▼</div>
+                    </div>
+        
+                    <div class="flow-node node-cream node-wide">
+                        <h4>ARAHAN STRATEGIS</h4>
+                    </div>
+                    <div class="stem-arrow">
+                        <div class="stem-line"></div>
+                        <div class="stem-head">▼</div>
+                    </div>
+        
+                    <div class="flow-node node-navy node-wide">
+                        <h4>OUTPUT PROGRAM</h4>
+                    </div>
+                </div>
+        
+                <!-- connector 3 -->
+                <div class="svg-connector-box desktop-only">
+                    <svg viewBox="0 0 900 40" preserveAspectRatio="none" shape-rendering="crispEdges">
+                        <path d="M450 0 V32" stroke="#0B1120" stroke-width="4" fill="none"/>
+                        <path d="M150 32 V16 H750 V32" stroke="#0B1120" stroke-width="4" fill="none"/>
+                        <polygon points="142,30 158,30 150,40" fill="#0B1120"/>
+                        <polygon points="442,30 458,30 450,40" fill="#0B1120"/>
+                        <polygon points="742,30 758,30 750,40" fill="#0B1120"/>
+                    </svg>
+                </div>
+                <div class="mobile-arrow">▼</div>
+        
+                <!-- level 9: output program -->
+                <div class="flow-row-3">
+                    <div class="flow-node node-cream">
+                        <h4>PROGRAM 100 HARI KERJA</h4>
+                    </div>
+                    <div class="flow-node node-cream">
+                        <h4>PROGRAM UNGGULAN</h4>
+                    </div>
+                    <div class="flow-node node-cream">
+                        <h4>PROGRAM INOVASI</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 4: kotak aspirasi -->
+        <section id="tavern" class="tavern-section">
+            <div class="tavern-box">
+                <div class="tavern-npc">
+                    <div class="npc-avatar">⚡︎</div>
+                </div>
+                <div class="tavern-content">
+                    <h2>KIRIM ASPIRASI &amp; DUKUNGAN</h2>
+                    <p>“Himasta bukan tentang siapa yang menjadi cahaya paling terang, melainkan bagaimana setiap individu saling menguatkan.”</p>
+                    <button id="openAspirasiModal" class="pixel-btn btn-gold sfx-btn">TULIS PESAN ATAU ASPIRASI</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <footer class="game-footer">
+            <span>HIMPUNAN MAHASISWA STATISTIKA 2027</span>
+            <span>KABINET ARUNIKA CAKRAWALA</span>
+            <span>UNIVERSITAS DIPONEGORO</span>
+        </footer>
+    </div>
+
+    <!-- dialog -->
+    <div id="retroModal" class="modal-backdrop">
+        <div class="modal-window pixel-box">
+            <div class="modal-titlebar">
+                <span id="modalHeading">SYSTEM_INFO</span>
+                <button id="closeModal" class="pixel-btn btn-gold btn-xs sfx-btn">X</button>
+            </div>
+            <div id="modalContent" class="modal-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

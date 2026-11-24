@@ -10,21 +10,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="crt-overlay"></div>
-
     <div class="game-wrapper">
         <!-- top hud bar -->
         <header class="hud-bar">
             <div class="hud-brand">
-                <span class="blink-star">★</span>KABINET ARUNIKA CAKRAWALA
+                KABINET ARUNIKA CAKRAWALA
             </div>
             <nav class="hud-nav">
-                <a href="index.html" class="sfx-btn">BERANDA</a>
-                <a href="about.html" class="sfx-btn">ABOUT</a>
-                <a href="timses.html" class="sfx-btn">TIMSES</a>
-                <a href="#" class="sfx-btn">KATA</a>
+                <a href="index.html" class="nav-active">BERANDA</a>
+                <a href="about.html">ABOUT</a>
+                <a href="timses.html">TIMSES</a>
+                <a href="proker.html">PROKER</a>
             </nav>
-            <button id="soundToggle" class="pixel-btn btn-gold btn-xs sfx-btn">SFX: ON</button>
         </header>
 
         <!-- hero stage -->
@@ -35,47 +32,11 @@
                 <!-- left -->
                 <div class="character-card pixel-box">
                     <div class="card-top-bar">
-                        <span>M. RISKI FARIS</span>
-                        <span class="hp-badge">KANDIDAT 00</span>
-                    </div>
-                    
-                    <div class="sprite-arena">
-                        <svg class="pixel-emblem" viewBox="0 0 32 32" shape-rendering="crispEdges" aria-label="Pixel Emblem Arunika Cakrawala">
-                            <rect x="15" y="2" width="2" height="4" fill="#F5AF3D"/>
-                            <rect x="9" y="5" width="2" height="3" fill="#F5AF3D"/>
-                            <rect x="21" y="5" width="2" height="3" fill="#F5AF3D"/>
-                            <rect x="5" y="10" width="3" height="2" fill="#F5AF3D"/>
-                            <rect x="24" y="10" width="3" height="2" fill="#F5AF3D"/>
-                            <rect x="11" y="9" width="10" height="7" fill="#F5AF3D"/>
-                            <rect x="13" y="8" width="6" height="9" fill="#FDE047"/>
-                            <rect x="6" y="14" width="20" height="2" fill="#6899D0"/>
-                            <rect x="4" y="16" width="24" height="2" fill="#6899D0"/>
-                            <rect x="15" y="13" width="2" height="2" fill="#183661"/>
-                            <rect x="14" y="16" width="4" height="5" fill="#183661"/>
-                            <rect x="10" y="15" width="2" height="2" fill="#183661"/>
-                            <rect x="9" y="18" width="3" height="4" fill="#183661"/>
-                            <rect x="20" y="15" width="2" height="2" fill="#183661"/>
-                            <rect x="20" y="18" width="3" height="4" fill="#183661"/>
-                            <rect x="5" y="22" width="22" height="2" fill="#183661"/>
-                            <rect x="8" y="25" width="16" height="2" fill="#E58C24"/>
-                            <rect x="12" y="28" width="8" height="2" fill="#183661"/>
-                        </svg>
+                        <span>LOGO KABINET ARUNIKA CAKRAWALA</span>
+                    </div>            
+                    <div class="sprite-arena logo-arena">
+                        <img src="picture/capybara.jpg" alt="Logo Kabinet Arunika Cakrawala" class="real-logo">
                         <div class="sprite-shadow"></div>
-                    </div>
-
-                    <div class="stat-bars">
-                        <div class="stat-row">
-                            <span>INKLUSIF</span>
-                            <div class="bar-track"><div class="bar-fill gold" style="width: 100%"></div></div>
-                        </div>
-                        <div class="stat-row">
-                            <span>SINERGI</span>
-                            <div class="bar-track"><div class="bar-fill sky" style="width: 100%"></div></div>
-                        </div>
-                        <div class="stat-row">
-                            <span>PROGRESIF</span>
-                            <div class="bar-track"><div class="bar-fill gold" style="width: 100%"></div></div>
-                        </div>
                     </div>
                 </div>
 
@@ -89,7 +50,6 @@
                         <p id="typewriterText">
                             Cahaya fajar pembawa harapan baru untuk Himasta. Mewujudkan organisasi yang inklusif, kolaboratif, dan progresif dalam mengembangkan potensi mahasiswa Statistika.
                         </p>
-                        <span class="dialogue-cursor">▼</span>
                     </div>
 
                     <div class="hero-cta-group">
@@ -138,7 +98,6 @@
             <!-- budaya organisasi -->
             <div class="section-banner" style="margin-top: 28px;">
                 <h2>BUDAYA ORGANISASI</h2>
-                <span>PILIH ICON UNTUK INSPEKSI</span>
             </div>
             
             <div class="skill-grid" id="budayaGrid">
@@ -381,9 +340,6 @@
         <!-- section 4: kotak aspirasi -->
         <section id="tavern" class="tavern-section">
             <div class="tavern-box">
-                <div class="tavern-npc">
-                    <div class="npc-avatar">⚡︎</div>
-                </div>
                 <div class="tavern-content">
                     <h2>KIRIM ASPIRASI &amp; DUKUNGAN</h2>
                     <p>“Himasta bukan tentang siapa yang menjadi cahaya paling terang, melainkan bagaimana setiap individu saling menguatkan.”</p>
@@ -396,7 +352,6 @@
         <footer class="game-footer">
             <span>HIMPUNAN MAHASISWA STATISTIKA 2027</span>
             <span>KABINET ARUNIKA CAKRAWALA</span>
-            <span>UNIVERSITAS DIPONEGORO</span>
         </footer>
     </div>
 

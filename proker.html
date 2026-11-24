@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROGRAM KERJA | KABINET ARUNIKA CAKRAWALA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-wrapper">
+        <!-- top hud bar -->
+        <header class="hud-bar">
+            <div class="hud-brand">
+                KABINET ARUNIKA CAKRAWALA
+            </div>
+            <nav class="hud-nav">
+                <a href="index.html">BERANDA</a>
+                <a href="about.html">ABOUT</a>
+                <a href="timses.html">TIMSES</a>
+                <a href="proker.html" class="nav-active">PROKER</a>
+            </nav>
+        </header>
+
+        <!-- header banner -->
+        <section class="hero-stage" style="padding: 28px;">
+            <div class="hero-dialogue pixel-box">
+                <div class="quest-tag">OUTPUT GDO 2027 (?)</div>
+                <h1 class="pixel-title" style="font-size: 1.7rem;">PROGRAM KERJA KABINET</h1>
+                <p class="pixel-subtitle">“Solusi Nyata untuk Himasta yang Inklusif, Kolaboratif, dan Progresif”</p>
+                <div class="rpg-textbox" style="margin-bottom: 0;">
+                    <p>
+                        Berdasarkan alur berpikir Grand Design Organization (GDO), program kerja Kabinet Arunika Cakrawala terbagi menjadi tiga pilar utama: <strong>Program 100 Hari Kerja</strong>, <strong>Program Unggulan</strong>, dan <strong>Program Inovasi</strong>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- filter kategori proker -->
+        <section class="game-section">
+            <div class="section-banner">
+                <h2>PROGRAM KERJA</h2>
+            </div>
+
+            <div class="proker-filter-bar" id="prokerFilter">
+                <button class="pixel-btn btn-gold btn-xs active" data-cat="all">SEMUA PROKER</button>
+                <button class="pixel-btn btn-cream btn-xs" data-cat="100hari">100 HARI KERJA</button>
+                <button class="pixel-btn btn-cream btn-xs" data-cat="unggulan">PROGRAM UNGGULAN</button>
+                <button class="pixel-btn btn-cream btn-xs" data-cat="inovasi">PROGRAM INOVASI</button>
+            </div>
+
+            <!-- grid proker -->
+            <div class="proker-grid" id="prokerGrid">
+                <!-- 100 Hari Kerja 1 -->
+                <div class="proker-card pixel-box-inner" data-cat="100hari">
+                    <div class="proker-top">
+                        <span class="proker-badge badge-gold">100 HARI KERJA</span>
+                        <span class="proker-target">TARGET</span>
+                    </div>
+                    <h4>JUDUL PROKER</h4>
+                    <p class="proker-desc">Deskripsi proker.</p>
+                    <div class="proker-impact">
+                        <span>OUTPUT:</span> ...
+                    </div>
+                </div>
+
+                <!-- 100 Hari Kerja 2 -->
+                <div class="proker-card pixel-box-inner" data-cat="100hari">
+                    <div class="proker-top">
+                        <span class="proker-badge badge-gold">100 HARI KERJA</span>
+                        <span class="proker-target">TARGET</span>
+                    </div>
+                    <h4>JUDUL PROKER</h4>
+                    <p class="proker-desc">Deskripsi proker.</p>
+                    <div class="proker-impact">
+                        <span>OUTPUT:</span> ...
+                    </div>
+                </div>
+
+                <!-- Program Unggulan 1 -->
+                <div class="proker-card pixel-box-inner" data-cat="unggulan">
+                    <div class="proker-top">
+                        <span class="proker-badge badge-sky">PROGRAM UNGGULAN</span>
+                        <span class="proker-target">TARGET</span>
+                    </div>
+                    <h4>JUDUL PROKER</h4>
+                    <p class="proker-desc">Deskripsi proker.</p>
+                    <div class="proker-impact">
+                        <span>OUTPUT:</span> ...
+                    </div>
+                </div>
+
+                <!-- Program Unggulan 2 -->
+                <div class="proker-card pixel-box-inner" data-cat="unggulan">
+                    <div class="proker-top">
+                        <span class="proker-badge badge-sky">PROGRAM UNGGULAN</span>
+                        <span class="proker-target">TARGET</span>
+                    </div>
+                    <h4>JUDUL PROKER</h4>
+                    <p class="proker-desc">Deskripsi proker.</p>
+                    <div class="proker-impact">
+                        <span>OUTPUT:</span> ...
+                    </div>
+                </div>
+
+                <!-- Program Inovasi 1 -->
+                <div class="proker-card pixel-box-inner" data-cat="inovasi">
+                    <div class="proker-top">
+                        <span class="proker-badge badge-navy">PROGRAM INOVASI</span>
+                        <span class="proker-target">TARGET</span>
+                    </div>
+                    <h4>JUDUL PROKER</h4>
+                    <p class="proker-desc">Deskripsi proker.</p>
+                    <div class="proker-impact">
+                        <span>OUTPUT:</span> ...
+                    </div>
+                </div>
+
+                <!-- Program Inovasi 2 -->
+                <div class="proker-card pixel-box-inner" data-cat="inovasi">
+                    <div class="proker-top">
+                        <span class="proker-badge badge-navy">PROGRAM INOVASI</span>
+                        <span class="proker-target">TARGET</span>
+                    </div>
+                    <h4>JUDUL PROKER</h4>
+                    <p class="proker-desc">Deskripsi proker.</p>
+                    <div class="proker-impact">
+                        <span>OUTPUT:</span> ...
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ajakan dukungan -->
+        <section class="tavern-section">
+            <div class="tavern-box">
+                <div class="tavern-content">
+                    <h2>JADI BAGIAN DARI PERJALANAN INI</h2>
+                    <p>Ingin ikut berdiskusi, memberi masukan, atau mendukung gagasan Arunika Cakrawala untuk Himasta 2027?</p>
+                    <a href="index.html#tavern" class="pixel-btn btn-gold">KIRIM DUKUNGAN &amp; ASPIRASI</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <footer class="game-footer">
+            <span>HIMPUNAN MAHASISWA STATISTIKA 2027</span>
+            <span>KABINET ARUNIKA CAKRAWALA</span>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

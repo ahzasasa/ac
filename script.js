@@ -222,13 +222,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (openAspirasiModalBtn) {
         openAspirasiModalBtn.addEventListener('click', () => {
             openModal(
-                'GUESTBOOK & ASPIRASI HIMASTA 2027',
+                'ASPIRASI UNTUK HIMASTA 2027',
                 `<form id="rpgAspirasiForm">
                     <label>NAMA / ANGKATAN (OPSIONAL):</label>
-                    <input type="text" class="retro-input" placeholder="Player_Statistika_2025">
+                    <input type="text" class="retro-input" placeholder="Misal: Faris 2025">
                     <label>PESAN / IDE / ASPIRASI:</label>
-                    <textarea class="retro-textarea" rows="4" required placeholder="Ketik aspirasimu untuk Himasta 2027..."></textarea>
-                    <button type="submit" class="pixel-btn btn-gold btn-full">💾 SAVE &amp; KIRIM ASPIRASI</button>
+                    <textarea class="retro-textarea" rows="4" required placeholder="Ketik aspirasimu untuk Himasta 2027"></textarea>
+                    <button type="submit" class="pixel-btn btn-gold btn-full">KIRIM ASPIRASI</button>
                 </form>`
             );
 
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (form) {
                 form.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    modalContent.innerHTML = `<p><strong>★ QUEST UPDATED!</strong><br>Aspirasimu berhasil disimpan ke dalam catatan Arunika Cakrawala. Terima kasih telah ikut menyinari sesama!</p>`;
+                    modalContent.innerHTML = `<p><strong>TERIMA KASIH, YA!</strong><br>Aspirasimu berhasil disimpan ke dalam catatan Arunika Cakrawala. Terima kasih telah ikut menyinari sesama!</p>`;
                 });
             }
         });
